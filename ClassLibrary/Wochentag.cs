@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ItSchulung.CsharpKursClassLibrary
+namespace ItSchulung.CsharpKurs.ClassLibrary
 {
-    internal class Wochentag
+    public enum Wochentag
     {
+        Montag,
+        Dienstag,
+        Mittwoch,
+        Donnerstag,
+        Freitag,
+        Samstag,
+        Sonntag
     }
 }

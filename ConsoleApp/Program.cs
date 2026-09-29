@@ -174,6 +174,9 @@
             // Exception Demo
             ExceptionDemo();
 
+            // Enumeration Demo
+            Enumeration();
+
 
             ///EXIT
             Console.WriteLine("Press any key to exit...");
@@ -260,8 +263,14 @@
             finally
             {
                 Console.WriteLine("Die ExceptionDemo-Methode wurde beendet.");
-            }   
+            }
         }
 
+        public static void Enumeration()
+        {
+            ItSchulung.CsharpKurs.ClassLibrary.Wochentag meinTag = ItSchulung.CsharpKurs.ClassLibrary.Wochentag.Mittwoch;
+            Console.WriteLine($"Der heutige Wochentag ist: {meinTag}");
+
+        }
     }
-    }
+}
