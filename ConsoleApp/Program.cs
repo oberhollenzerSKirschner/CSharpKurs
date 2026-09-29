@@ -144,6 +144,22 @@
                 }
             } while (!bAbruchBedingung);
 
+            //Foreach Schleife
+            string[] namen = new string[] { "Sebastian", "Alexander", "Sören","Jens","Joel","Tobias" };
+
+            for (int i = 0; i < namen.GetUpperBound(0); i++)
+            {
+                string name = namen[i];
+                Console.WriteLine($"Name: {name}");
+            }
+
+            foreach (string name in namen)
+            {
+                Console.WriteLine($"Name: {name}");
+            }
+
+
+
             ///EXIT
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
