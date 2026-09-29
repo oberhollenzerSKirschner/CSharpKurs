@@ -208,13 +208,13 @@
         {
             Console.WriteLine($"ParameterByValueDemo(int : {j} )");
             j += 1;
-            Console.WriteLine($"Der Wert des Parameters ist: {j}");
+            Console.WriteLine($"Der Wert des Parameters J ist: {j}");
         }
         static void ParameterByReferenzDemo(ref int j)
         {
             Console.WriteLine($"ParameterByReferenzDemo(ref int : {j} )");
             j += 1;
-            Console.WriteLine($"Der Wert des Parameters ist: {j}");
+            Console.WriteLine($"Der Wert des Parameters J ist: {j}");
         }
     }
     }
