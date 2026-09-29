@@ -12,6 +12,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+            Begrüße();
 
             Console.WriteLine("Bitte geben Sie Ihren Vornamen ein:");
             string sVorname = Console.ReadLine();
@@ -101,7 +102,7 @@
             //Programmfluss steuern mit Iterationen / Schleifen.
 
             Console.WriteLine("Zählerbasierend Schleife for");
-            for (int iZähler3 = 0; iZähler3  < names.Length; iZähler3++)
+            for (int iZähler3 = 0; iZähler3 < names.Length; iZähler3++)
             {
                 Console.WriteLine($"Name {iZähler3 + 1}: {names[iZähler3]}");
             }
@@ -109,7 +110,7 @@
 
             for (int iZähler2 = 0; iZähler2 < 10; iZähler2++)
             {
-                if (iZähler2 == 5) 
+                if (iZähler2 == 5)
                 {
                     continue;
                 }
@@ -204,17 +205,34 @@
             return $"Hallo {_Name}!";
         }
 
+        /// <summary>
+        /// Demonstriert die Übergabe eines Parameters per Wert. Der Wert des Parameters wird innerhalb der Methode geändert, hat jedoch keine Auswirkungen auf die ursprüngliche Variable außerhalb der Methode.
+        /// </summary>
+        /// <param name="j"></param>
         static void ParameterByValueDemo(int j)
         {
             Console.WriteLine($"ParameterByValueDemo(int : {j} )");
             j += 1;
             Console.WriteLine($"Der Wert des Parameters J ist: {j}");
         }
+
+        /// <summary>
+        /// Demonstriert die Übergabe eines Parameters per Referenz. Der Wert des Parameters wird innerhalb der Methode geändert und hat Auswirkungen auf die ursprüngliche Variable außerhalb der Methode.
+        /// </summary>
+        /// <param name="j"></param>
         static void ParameterByReferenzDemo(ref int j)
         {
             Console.WriteLine($"ParameterByReferenzDemo(ref int : {j} )");
             j += 1;
             Console.WriteLine($"Der Wert des Parameters J ist: {j}");
+        }
+
+        /// <summary>
+        /// Begrüßt den Benutzer mit einer einfachen Nachricht.
+        /// </summary>
+        static void Begrüße()
+        {
+            Console.WriteLine("Hi!");
         }
     }
     }
