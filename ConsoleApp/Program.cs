@@ -180,7 +180,12 @@
         /// <param name="_Name">Der Name der zu begrüßenden Person.</param>
         static void Begrüße(string _Name)
         {
-            Console.WriteLine($"Hallo {_Name}!");
+            //Console.WriteLine($"Hallo {_Name}!");
+            Console.WriteLine(ErstelleBegrüßungText(_Name));
         }
-    }
+
+        static string ErstelleBegrüßungText(string _Name)
+        {
+            return $"Hallo {_Name}!";
+        }
 }
