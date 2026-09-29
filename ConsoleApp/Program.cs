@@ -238,13 +238,16 @@
             Console.WriteLine("Hi!");
         }
 
+        /// <summary>
+        /// Demonstriert den Umgang mit Ausnahmen (Exceptions) in C#. Versucht, eine Division durch Null durchzuführen und fängt die entsprechende Ausnahme ab. Zeigt die Fehlermeldung an und gibt eine Abschlussmeldung aus.
+        /// </summary>
         static void ExceptionDemo()
         {
             try
             {
                 int i = 10;
                 int j = 0;
-                int k = i / j;
+                float k = i / j;
             }
             catch (DivideByZeroException ex)
             {
