@@ -1,4 +1,4 @@
-﻿namespace ITSchulung.CsharpKurs.ConsoleApp
+﻿namespace ItSchulung.CsharpKurs.ConsoleApp
 {
     /// <summary>
     /// Hallo Welt! Consolen Programm.
