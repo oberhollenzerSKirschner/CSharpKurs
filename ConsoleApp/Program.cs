@@ -1,4 +1,6 @@
-﻿namespace ItSchulung.CsharpKurs.ConsoleApp
+﻿using ItSchulung.CsharpKurs.ClassLibrary;
+
+namespace ItSchulung.CsharpKurs.ConsoleApp
 {
     /// <summary>
     /// Hallo Welt! Consolen Programm.
@@ -266,10 +268,26 @@
             }
         }
 
+        /// <summary>
+        /// Demonstriert die Verwendung von Enumerationen in C#. Erstellt eine Variable vom Typ Wochentag und weist ihr den Wert Mittwoch zu. Gibt den aktuellen Wochentag in der Konsole aus.
+        /// </summary>
         public static void Enumeration()
         {
-            ItSchulung.CsharpKurs.ClassLibrary.Wochentag meinTag = ItSchulung.CsharpKurs.ClassLibrary.Wochentag.Mittwoch;
-            Console.WriteLine($"Der heutige Wochentag ist: {meinTag}");
+            //ItSchulung.CsharpKurs.ClassLibrary.Wochentag meinTag = ItSchulung.CsharpKurs.ClassLibrary.Wochentag.Mittwoch;
+            Wochentag meinTag = Wochentag.Mittwoch;
+            //Console.WriteLine($"Der heutige Wochentag ist: {meinTag}");
+
+        }
+
+        public static void Strukturen()
+        {
+            double X;
+            double Y;
+            double Z;
+            Punkt2D p1;
+            p1.X = 1;
+            p1.Y = 2;
+
 
         }
     }
