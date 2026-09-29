@@ -31,5 +31,15 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
             ergebnisPunkt.Y = y;
             return ergebnisPunkt;
         }
+
+        /// <summary>
+        /// Fügt einen Vektor (Punkt2D) zu diesem Punkt hinzu und gibt den resultierenden Punkt zurück.
+        /// </summary>
+        /// <param name="vektor">Der Vektor, der zum Punkt addiert werden soll.</param>
+        /// <returns>Der resultierende Punkt.</returns>
+        public Punkt2D AddiereVektor(Punkt2D vektor)
+        {
+            return AddiereVektor(vektor.X, vektor.Y);
+        }
     }
 }

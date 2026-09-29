@@ -298,6 +298,8 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             Punkt2D p3 = p1.AddiereVektor(23.21 , 78.89);
             Console.WriteLine($"Punkt3: X={p3.X}, Y={p3.Y}");
 
+            Punkt2D p4 = p1.AddiereVektor(p2);
+            Console.WriteLine($"Punkt4: X={p4.X}, Y={p4.Y}");
         }
     }
 }
