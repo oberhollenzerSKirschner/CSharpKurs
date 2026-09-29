@@ -164,13 +164,16 @@
 
             DemoRoutine();
 
-
             int i = 1;
             Console.WriteLine($"Der Wert des Parameters ist: {i}");
             ParameterByValueDemo(i);
             Console.WriteLine($"Der Wert des Parameters ist: {i}");
             ParameterByReferenzDemo(ref i);
             Console.WriteLine($"Der Wert des Parameters ist: {i}");
+
+            // Exception Demo
+            ExceptionDemo();
+
 
             ///EXIT
             Console.WriteLine("Press any key to exit...");
@@ -234,5 +237,28 @@
         {
             Console.WriteLine("Hi!");
         }
+
+        static void ExceptionDemo()
+        {
+            try
+            {
+                int i = 10;
+                int j = 0;
+                int k = i / j;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine($"Fehler: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Allgemeiner Fehler: {ex.Message}");
+            }
+            finally
+            {
+                Console.WriteLine("Die ExceptionDemo-Methode wurde beendet.");
+            }   
+        }
+
     }
     }
