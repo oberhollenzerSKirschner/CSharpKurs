@@ -17,5 +17,19 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// Die Y-Koordinate des Punktes.
         /// </summary>
         public double Y;
+
+        /// <summary>
+        /// Fügt einen Vektor (x, y) zu diesem Punkt hinzu und gibt den resultierenden Punkt zurück.
+        /// </summary>  
+        /// <param name="x">Die X-Koordinate des Vektors.</param>
+        /// <param name="y">Die Y-Koordinate des Vektors.</param>
+        /// <returns>Der resultierende Punkt.</returns>
+        public Punkt2D AddiereVektor(double x, double y)
+        {
+            Punkt2D ergebnisPunkt;
+            ergebnisPunkt.X = x;
+            ergebnisPunkt.Y = y;
+            return ergebnisPunkt;
+        }
     }
 }

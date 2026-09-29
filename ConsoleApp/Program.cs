@@ -179,6 +179,9 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             // Enumeration Demo
             Enumeration();
 
+            // Strukturen Demo
+            Strukturen();
+
 
             ///EXIT
             Console.WriteLine("Press any key to exit...");
@@ -288,6 +291,12 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             p1.X = 12.09;
             p1.Y = 21.90;
 
+            Punkt2D p2;
+            p2.X = 34.98;
+            p2.Y = 43.89;
+
+            Punkt2D p3 = p1.AddiereVektor(23.21 , 78.89);
+            Console.WriteLine($"Punkt3: X={p3.X}, Y={p3.Y}");
 
         }
     }
