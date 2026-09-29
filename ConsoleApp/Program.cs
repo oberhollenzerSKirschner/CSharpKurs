@@ -285,8 +285,8 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             double Y;
             double Z;
             Punkt2D p1;
-            p1.X = 1;
-            p1.Y = 2;
+            p1.X = 12.09;
+            p1.Y = 21.90;
 
 
         }
