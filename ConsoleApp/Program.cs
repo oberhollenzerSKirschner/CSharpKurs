@@ -1,4 +1,4 @@
-﻿namespace ItSchulung.CsharpKurs.ConsoleApp
+﻿namespace ITSchulung.CsharpKurs.ConsoleApp
 {
     /// <summary>
     /// Hallo Welt! Consolen Programm.
@@ -101,21 +101,23 @@
             //Programmfluss steuern mit Iterationen / Schleifen.
 
             Console.WriteLine("Zählerbasierend Schleife for");
-            for (int i = 0; i < names.Length; i++)
+            for (int iZähler3 = 0; iZähler3  < names.Length; iZähler3++)
             {
-                Console.WriteLine($"Name {i + 1}: {names[i]}");
+                Console.WriteLine($"Name {iZähler3 + 1}: {names[iZähler3]}");
             }
-            for (int i = 0; i < 10; i++)
+
+
+            for (int iZähler2 = 0; iZähler2 < 10; iZähler2++)
             {
-                if (i == 5)
+                if (iZähler2 == 5) 
                 {
                     continue;
                 }
-                if (i > 8)
+                if (iZähler2 > 8)
                 {
                     break;  // return;
                 }
-                Console.WriteLine($"Der Zählerhat den Wert {i}");
+                Console.WriteLine($"Der Zählerhat den Wert {iZähler2}");
             }
 
 
@@ -148,9 +150,9 @@
             //Foreach Schleife
             string[] namen = new string[] { "Sebastian", "Alexander", "Sören", "Jens", "Joel", "Tobias" };
 
-            for (int i = 0; i < namen.GetUpperBound(0); i++)
+            for (int iZähler4 = 0; iZähler4 < namen.GetUpperBound(0); iZähler4++)
             {
-                string name = namen[i];
+                string name = namen[iZähler4];
                 Console.WriteLine($"Name: {name}");
             }
 
@@ -160,6 +162,14 @@
             }
 
             DemoRoutine();
+
+
+            int i = 1;
+            Console.WriteLine($"Der Wert des Parameters ist: {i}");
+            ParameterByValueDemo(i);
+            Console.WriteLine($"Der Wert des Parameters ist: {i}");
+            ParameterByReferenzDemo(ref i);
+            Console.WriteLine($"Der Wert des Parameters ist: {i}");
 
             ///EXIT
             Console.WriteLine("Press any key to exit...");
@@ -184,8 +194,27 @@
             Console.WriteLine(ErstelleBegrüßungText(_Name));
         }
 
+        /// <summary>
+        /// Erstellt einen Begrüßungstext für die angegebene Person.
+        /// </summary>
+        /// <param name="_Name">Name der Person, die begrüßt werden soll.</param>
+        /// <returns>Gibt den Begrüßungstext mit dem angegebenen Namen zurück.</returns>
         static string ErstelleBegrüßungText(string _Name)
         {
             return $"Hallo {_Name}!";
         }
-}
+
+        static void ParameterByValueDemo(int j)
+        {
+            Console.WriteLine($"ParameterByValueDemo(int : {j} )");
+            j += 1;
+            Console.WriteLine($"Der Wert des Parameters ist: {j}");
+        }
+        static void ParameterByReferenzDemo(ref int j)
+        {
+            Console.WriteLine($"ParameterByReferenzDemo(ref int : {j} )");
+            j += 1;
+            Console.WriteLine($"Der Wert des Parameters ist: {j}");
+        }
+    }
+    }
