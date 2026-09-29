@@ -14,10 +14,11 @@
             Console.WriteLine("Hello, World!");
 
             Console.WriteLine("Bitte geben Sie Ihren Vornamen ein:");
-            string vorname = Console.ReadLine();
+            string sVorname = Console.ReadLine();
 
-            Console.WriteLine($"Hallo, {vorname}!");
+            Console.WriteLine($"Hallo, {sVorname}!");
 
+            Begrüße(sVorname);
 
             System.Boolean isTrue = true;
             bool isFalse = false;
@@ -70,21 +71,21 @@
             //Programmfluss steuern.
 
             //Entscheidungen (if statement)
-            if (vorname.Equals("Adam"))
+            if (sVorname.Equals("Adam"))
             {
                 Console.WriteLine("Hallo erster Mensch Adam!");
             }
-            else if (vorname.Equals("Eva"))
+            else if (sVorname.Equals("Eva"))
             {
                 Console.WriteLine("Hallo zweiter Mensch Eva!");
             }
             else
             {
-                Console.WriteLine($"Hallo {vorname}!");
+                Console.WriteLine($"Hallo {sVorname}!");
             }
 
             //Mehrfachauswahl (switch statement)
-            switch (vorname)
+            switch (sVorname)
             {
                 case "Adam":
                     Console.WriteLine("Hallo erster Mensch ADAM!");
@@ -93,7 +94,7 @@
                     Console.WriteLine("Hallo zweiter Mensch EVA!");
                     break;
                 default:
-                    Console.WriteLine($"Hallo {vorname.ToUpper()}!");
+                    Console.WriteLine($"Hallo {sVorname.ToUpper()}!");
                     break;
             }
 
@@ -106,11 +107,11 @@
             }
             for (int i = 0; i < 10; i++)
             {
-                if (i ==5)
+                if (i == 5)
                 {
                     continue;
                 }
-                if (i >8)
+                if (i > 8)
                 {
                     break;  // return;
                 }
@@ -124,7 +125,7 @@
             while (!bAbruchBedingung && iZähler < names.Length)
             {
                 iZähler++;
-                if (iZähler >= names.Length-1)
+                if (iZähler >= names.Length - 1)
                 {
                     bAbruchBedingung = true;
                 }
@@ -145,7 +146,7 @@
             } while (!bAbruchBedingung);
 
             //Foreach Schleife
-            string[] namen = new string[] { "Sebastian", "Alexander", "Sören","Jens","Joel","Tobias" };
+            string[] namen = new string[] { "Sebastian", "Alexander", "Sören", "Jens", "Joel", "Tobias" };
 
             for (int i = 0; i < namen.GetUpperBound(0); i++)
             {
@@ -158,11 +159,28 @@
                 Console.WriteLine($"Name: {name}");
             }
 
-
+            DemoRoutine();
 
             ///EXIT
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Eine Demo-Routine, die eine Testausgabe in der Konsole anzeigt.
+        /// </summary>
+        static void DemoRoutine()
+        {
+            Console.WriteLine("Hallo aus einer Routine!");
+        }
+
+        /// <summary>
+        /// Begrüßt eine Person mit dem angegebenen Namen.
+        /// </summary>
+        /// <param name="_Name">Der Name der zu begrüßenden Person.</param>
+        static void Begrüße(string _Name)
+        {
+            Console.WriteLine($"Hallo {_Name}!");
         }
     }
 }
