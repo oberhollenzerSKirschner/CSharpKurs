@@ -320,6 +320,10 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             //emp1.Salary = 120000.00m;
 
             Console.WriteLine($"Mitarbeiter: {emp1.Greet()}");
+
+            Employee emp2 = new Employee("Eva", "Meier", new DateOnly(1985, 8, 20), Gender.Female, Department.Sales);
+            Console.WriteLine($"Mitarbeiter: {emp2.Greet()}"); 
+            
         }
 
     }

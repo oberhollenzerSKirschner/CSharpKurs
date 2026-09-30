@@ -47,15 +47,14 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         #region Konstruktor
         public Employee()
         {
-            string FirstName = string.Empty;
-            string LastName = string.Empty;
-            DateOnly DateOfBirth = DateOnly.MinValue;
-            Gender Sex = Gender.none;
-            Department Department = Department.HumanResources;
-            decimal Salary = 0.0m;
-            long EmployeeId = 0;
-            Init(FirstName, LastName, DateOfBirth, Sex, Department, Salary, EmployeeId);
+            //Default Konstruktor
         }
+        Employee(string firstName, string lastName)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+        }
+
         /// <summary>
         /// Initialisiert eine neue Instanz der <see cref="Employee"/>-Klasse mit den angegebenen Werten.
         /// </summary>
@@ -66,22 +65,12 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// <param name="department"></param>
         /// <param name="salary"></param>
         /// <param name="employeeId"></param>
-        public Employee(string firstName, string lastName, DateOnly dateOnly, Gender sex, Department department, decimal salary, long employeeId)
+        public Employee(string firstName, string lastName, DateOnly dateofbirth, Gender sex, Department department) : this(firstName, lastName)
         {
-            Init(firstName, lastName, dateOnly, sex, department, salary, employeeId);
-        }
-
-        private void Init(string firstName, string lastName, DateOnly dateofbirth, Gender sex, Department department, decimal salary, long employeeId)
-        {
-            this.FirstName = firstName;
-            this._LastName = lastName;
             this.DateOfBirth = dateofbirth;
+            this.Department = department;
             this._Sex = sex;
-            this._Department = department;
-            //this._Salary = salary;
-            _EmployeeId = employeeId;
         }
-
         #endregion
 
         #region Properties
