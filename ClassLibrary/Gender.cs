@@ -7,7 +7,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
     /// <summary>
     /// Repräsentiert das Geschlecht eines Mitarbeiters.
     /// </summary>
-    public enum Gender
+    public enum Gender :int
     {
         /// <summary>   
         /// Kennzeichnet kein Geschlecht.

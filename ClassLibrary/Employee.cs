@@ -44,6 +44,16 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         #endregion
 
         #region Konstruktor
+        public Employee()
+        {
+            FirstName = string.Empty;
+            LastName = string.Empty;
+            DateOnly = DateOnly.MinValue;
+            Gender = Gender.none;
+            Department = Department.HumanResources;
+            Salary = 0.0m;
+            EmployeeId = 0;
+        }  
         /// <summary>
         /// Initialisiert eine neue Instanz der <see cref="Employee"/>-Klasse mit den angegebenen Werten.
         /// </summary>

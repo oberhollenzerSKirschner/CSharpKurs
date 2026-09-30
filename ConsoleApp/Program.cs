@@ -182,6 +182,8 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             // Strukturen Demo
             Strukturen();
 
+            // Objektorientierte Programmierung (OOP) Demo
+            ObjektorientierteProgrammierungDemo();
 
             ///EXIT
             Console.WriteLine("Press any key to exit...");
@@ -304,5 +306,21 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             Punkt2D p4 = p1.AddiereVektor(p2);
             Console.WriteLine($"Punkt4: X={p4.X}, Y={p4.Y}");
         }
+
+        public static void ObjektorientierteProgrammierungDemo()
+        {
+            Employee emp1;
+            emp1 = new Employee();
+
+            emp1.FirstName = "Max";
+            emp1.LastName = "Mustermann";
+            emp1.Department = Department.Management;
+            emp1.DateOnly = new DateOnly(1975, 5, 12);
+            emp1.Gender = Gender.Male;
+            emp1.Salary = 120000.00m;
+
+            Console.WriteLine($"Mitarbeiter: {emp1.Greet()}");
+        }
+
     }
 }

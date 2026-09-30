@@ -8,8 +8,12 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
     /// Repräsentiert verschiedene Abteilungen in einem Unternehmen.
     /// </summary>
     /// <remarks>  Verwendung zur Klassifizierung von Mitarbeitern, Zuständigkeiten imd Prozesse inerhalb des Systems</remarks>
-    public enum Department
+    public enum Department :long
     {
+        /// <summary>
+        /// Kennzeichnet die Personalabteilung.
+        /// </summary>
+        HumanResources,
         /// <summary>
         /// Kennzeichnet die Fertigung.
         /// </summary>
