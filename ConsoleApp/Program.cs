@@ -282,6 +282,9 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
 
         }
 
+        /// <summary>
+        /// Demonstriert die Verwendung von Strukturen in C#. Erstellt zwei Punkte (Punkt2D) und addiert Vektoren zu diesen Punkten. Gibt die Ergebnisse in der Konsole aus.
+        /// </summary>
         public static void Strukturen()
         {
             double X;
