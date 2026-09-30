@@ -27,8 +27,8 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         public Punkt2D AddiereVektor(double x, double y)
         {
             Punkt2D ergebnisPunkt;
-            ergebnisPunkt.X = x;
-            ergebnisPunkt.Y = y;
+            ergebnisPunkt.X = this.X + x;
+            ergebnisPunkt.Y = this.Y + y;
             return ergebnisPunkt;
         }
 
