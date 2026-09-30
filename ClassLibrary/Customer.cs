@@ -6,5 +6,11 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
 {
     public class Customer : Human
     {
+        private long _CustomerId;
+
+        public long CostermerId
+        {
+            get => _CustomerId;
+         }
     }
 }
