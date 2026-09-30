@@ -42,6 +42,11 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// </summary>
         private long _EmployeeId;   // { get; set; }
 
+        /// <summary>
+        /// Das Basisgehalt des Mitarbeiters, das als Ausgangspunkt für die Gehaltsberechnung dient.
+        /// </summary>
+        private decimal _baseSalarym = 30000m;   // { get; set; }
+
         #endregion
 
         #region Konstruktor
@@ -49,6 +54,11 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         {
             //Default Konstruktor
         }
+        /// <summary>
+        /// Initialisiert eine neue Instanz der Employee-Klasse mit den angegebenen Parametern.
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
         Employee(string firstName, string lastName)
         {
             this.FirstName = firstName;
@@ -56,15 +66,13 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         }
 
         /// <summary>
-        /// Initialisiert eine neue Instanz der <see cref="Employee"/>-Klasse mit den angegebenen Werten.
+        /// Initialisiert eine neue Instanz der Employee-Klasse mit den angegebenen Parametern.
         /// </summary>
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
-        /// <param name="dateOnly"></param>
-        /// <param name="gender"></param>
+        /// <param name="dateofbirth"></param>
+        /// <param name="sex"></param>
         /// <param name="department"></param>
-        /// <param name="salary"></param>
-        /// <param name="employeeId"></param>
         public Employee(string firstName, string lastName, DateOnly dateofbirth, Gender sex, Department department) : this(firstName, lastName)
         {
             this.DateOfBirth = dateofbirth;
@@ -74,6 +82,9 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Gibt oder setzt den Vornamen des Mitarbeiters.
+        /// </summary>
         public string FirstName
         {
             get { return _FirstName; }
@@ -85,13 +96,17 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
                 }
             }
         }
-
+        /// <summary>
+        /// Gibt oder setzt den Nachnamen des Mitarbeiters.
+        /// </summary>
         public string LastName
         {
             get { return _LastName; }
             set { _LastName = value; }
         }
-
+        /// <summary>
+        /// Gibt oder setzt das Geburtsdatum des Mitarbeiters. Das Geburtsdatum muss mindestens 15 Jahre in der Vergangenheit liegen.  
+        /// </summary>
         public DateOnly DateOfBirth
         {
             get { return _DateOfBirth; }
@@ -103,13 +118,17 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
                 }
             }
         }
-
+        /// <summary>
+        /// Gibt oder setzt das Geschlecht des Mitarbeiters.
+        /// </summary>
         public Gender Sex
         {
             get { return _Sex; }
             set { _Sex = value; }
         }
-
+        /// <summary>
+        /// Gibt oder setzt die Abteilung, in der der Mitarbeiter tätig ist. Ändert sich die Abteilung, wird das Gehalt automatisch neu berechnet.
+        /// </summary>
         public Department Department
         {
             get { return _Department; }
@@ -117,22 +136,37 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
                 CalculateSalary();
             }
         }
-
+        /// <summary>
+        /// Gibt das Gehalt des Mitarbeiters zurück. Das Gehalt wird basierend auf der Abteilung berechnet und kann nicht direkt gesetzt werden.
+        /// </summary>
         public decimal Salary
         {
             get { return _Salary; }
         }
-        #endregion
 
+        /// <summary>
+        /// Setzt das Basisgehalt des Mitarbeiters.
+        /// </summary>
+        public decimal baseSalary
+        {
+            set { _baseSalary = value; }
+        }
+        #endregion
+        /// <summary>
+        /// Gibt eine Begrüßung zurück, die den Namen, die Abteilung und das Gehalt des Mitarbeiters enthält.
+        /// </summary>
+        /// <returns></returns>
         public string Greet()
         {
             return $"Hallo, mein Name ist {_FirstName} {_LastName}. Ich arbeite in der Abteilung {_Department} und mein Gehalt beträgt {_Salary:C}.";
         }
-
+        /// <summary>
+        /// Berechnet das Gehalt des Mitarbeiters basierend auf der Abteilung und Erfahrung. Das Gehalt wird automatisch aktualisiert, wenn die Abteilung geändert wird.
+        /// </summary>
         private void CalculateSalary()
         {
             // Berechnung des Gehalts basierend auf Abteilung und Erfahrung
-            decimal baseSalary = 30000m; // Basisgehalt
+            //decimal _baseSalary = 30000m; // Basisgehalt
             decimal departmentMultiplier = 1.0m;
             switch (_Department)
             {
@@ -158,7 +192,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
                     departmentMultiplier = 1.0m;
                     break;  
             }
-            _Salary = baseSalary * departmentMultiplier;
+            _Salary = _baseSalary * departmentMultiplier;
         }
     }
 }
