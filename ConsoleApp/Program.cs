@@ -251,21 +251,21 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
         /// </summary>
         static void ExceptionDemo()
         {
-            try
+            try   //Versuche:
             {
                 int i = 10;
                 int j = 0;
                 float k = i / j;
             }
-            catch (DivideByZeroException ex)
+            catch (DivideByZeroException ex)   //Fang die Division durch Null ab.
             {
                 Console.WriteLine($"Fehler: {ex.Message}");
             }
-            catch (Exception ex)
+            catch (Exception ex)   //Fang alle anderen Fehler ab.
             {
                 Console.WriteLine($"Allgemeiner Fehler: {ex.Message}");
             }
-            finally
+            finally   //Wird immer ausgeführt, egal ob ein Fehler aufgetreten ist oder nicht.
             {
                 Console.WriteLine("Die ExceptionDemo-Methode wurde beendet.");
             }
