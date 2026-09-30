@@ -315,9 +315,9 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             emp1.FirstName = "Max";
             emp1.LastName = "Mustermann";
             emp1.Department = Department.Management;
-            emp1.DateOnly = new DateOnly(1975, 5, 12);
-            emp1.Gender = Gender.Male;
-            emp1.Salary = 120000.00m;
+            emp1.DateOfBirth = new DateOnly(1975, 5, 12);
+            emp1.Sex = Gender.Male;
+            //emp1.Salary = 120000.00m;
 
             Console.WriteLine($"Mitarbeiter: {emp1.Greet()}");
         }
