@@ -322,8 +322,12 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             Console.WriteLine($"Mitarbeiter: {emp1.Greet()}");
 
             Employee emp2 = new Employee("Eva", "Meier", new DateOnly(1985, 8, 20), Gender.Female, Department.Sales);
-            Console.WriteLine($"Mitarbeiter: {emp2.Greet()}"); 
-            
+            Console.WriteLine($"Mitarbeiter: {emp2.Greet()}");
+
+            Customer cust1 = new Customer();
+            Console.WriteLine(cust1.Greet());
+
+
         }
 
     }
