@@ -327,7 +327,22 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             Customer cust1 = new Customer();
             Console.WriteLine(cust1.Greet());
 
+            Employee emp3 = new Employee("Jens", "Schulz", new DateOnly(2016, 3, 15), Gender.Male, Department.IT);
+            Console.WriteLine($"Mitarbeiter: {emp3.Greet()}");
 
+
+            Employee emp4 = new Employee();// "Tobias", "Klein", new DateOnly(1990, 11, 5), Gender.Male, Department.Production);
+            try
+            {
+                emp4.DateOfBirth = new DateOnly(2022, 02, 20);
+                emp4.FirstName = "Dummy";
+                emp4.LastName = "AgeTest";
+            }
+            catch (EmployeeToYoungEception ex)
+            {
+                Console.WriteLine($"Fehler: {ex.Message}"); 
+            }
+            Console.WriteLine($"Mitarbeiter: {emp4.Greet()}");
         }
 
     }

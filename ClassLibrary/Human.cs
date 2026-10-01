@@ -105,7 +105,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// Gibt eine Begrüßung zurück, die den Namen, die Abteilung und das Gehalt des Mitarbeiters enthält.
         /// </summary>
         /// <returns></returns>
-        public string Greet()
+        virtual public string Greet()
         {
             return $"Hallo, mein Name ist {_FirstName} {_LastName}.";
         }
