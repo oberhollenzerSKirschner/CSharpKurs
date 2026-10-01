@@ -25,7 +25,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// <summary>
         /// Das Basisgehalt des Mitarbeiters, das als Ausgangspunkt für die Gehaltsberechnung dient.
         /// </summary>
-        private decimal _baseSalarym = 30000m;   // { get; set; }
+        private decimal _baseSalary = 30000m;   // { get; set; }
 
         #endregion
 
