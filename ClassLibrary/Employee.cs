@@ -83,14 +83,37 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
             set { _baseSalary = value; }
         }
         #endregion
+
+        #region Override
         /// <summary>
         /// Gibt eine Begrüßung zurück, die den Namen, die Abteilung und das Gehalt des Mitarbeiters enthält.
         /// </summary>
         /// <returns></returns>
-        public string Greet()
-        {            
-            return base.Greet()+ $" Ich arbeite in der Abteilung {_Department} und mein Gehalt beträgt {_Salary:C}.";
+        public override string Greet()  
+        {
+            StringBuilder strGreeting = new StringBuilder();
+            strGreeting.AppendLine("##########################################################################################################################################");
+            strGreeting.AppendLine(base.Greet())
+            strGreeting.AppendLine($"Ich bin in der Abteilung {_Department} tätig und mein Personalnummer lautet {_EmployeeId}.");
+            strGreeting.AppendLine($"Mein Gehalt beträgt {_Salary:C}.");
+            strGreeting.AppendLine("##########################################################################################################################################");
+            return strGreeting.ToString();
+            //return base.Greet() + $" Ich arbeite in der Abteilung {_Department} und mein Gehalt beträgt {_Salary:C}.";
         }
+        #endregion
+
+        new public DateOnly DateOfBirth
+        {
+            get { return _DateOfBirth; }
+            set
+            {
+                if (DateTime.Now.Year - value.Year > 15)
+                {
+                    _DateOfBirth = value;
+                }
+            }
+        }
+
         /// <summary>
         /// Berechnet das Gehalt des Mitarbeiters basierend auf der Abteilung und Erfahrung. Das Gehalt wird automatisch aktualisiert, wenn die Abteilung geändert wird.
         /// </summary>

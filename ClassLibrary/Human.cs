@@ -18,7 +18,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// <summary>
         /// Das Geburtsdatum des Mitarbeiters.
         /// </summary>
-        private DateOnly _DateOfBirth;   // { get; set; }
+        internal DateOnly _DateOfBirth;   // { get; set; }
         /// <summary>
         /// Das Geschlecht des Mitarbeiters.
         /// </summary>
@@ -56,10 +56,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
             get { return _DateOfBirth; }
             set
             {
-                if (DateTime.Now.Year - value.Year > 15)
-                {
                     _DateOfBirth = value;
-                }
             }
         }
         /// <summary>
