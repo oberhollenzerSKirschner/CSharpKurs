@@ -89,11 +89,11 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// Gibt eine Begrüßung zurück, die den Namen, die Abteilung und das Gehalt des Mitarbeiters enthält.
         /// </summary>
         /// <returns></returns>
-        public override string Greet()  
+        override public string Greet()  
         {
             StringBuilder strGreeting = new StringBuilder();
             strGreeting.AppendLine("##########################################################################################################################################");
-            strGreeting.AppendLine(base.Greet())
+            strGreeting.AppendLine(base.Greet());
             strGreeting.AppendLine($"Ich bin in der Abteilung {_Department} tätig und mein Personalnummer lautet {_EmployeeId}.");
             strGreeting.AppendLine($"Mein Gehalt beträgt {_Salary:C}.");
             strGreeting.AppendLine("##########################################################################################################################################");
