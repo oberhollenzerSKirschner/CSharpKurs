@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ItSchulung.CsharpKurs.InterfaceLibrary;
 
 namespace ItSchulung.CsharpKurs.ClassLibrary
 {
-    public class Human
+    public class Human : IHuman 
     {
         #region Felder
         /// <summary>

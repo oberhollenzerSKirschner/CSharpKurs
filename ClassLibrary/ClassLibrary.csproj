@@ -7,4 +7,8 @@
     <RootNamespace>ItSchulung.CsharpKurs.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\InterfaceLibrary\InterfaceLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

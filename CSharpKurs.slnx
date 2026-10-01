@@ -2,5 +2,6 @@
   <Project Path="ClassLibrary/ClassLibrary.csproj" Id="cb055a96-c946-4979-8fd8-9089fff148a1" />
   <Project Path="ConsoleApp/ConsoleApp.csproj" />
   <Project Path="InterfaceLibrary/InterfaceLibrary.csproj" Id="00d9bba0-1548-4969-bbe4-ba8114a6120c" />
+  <Project Path="InterfaceWinFormsApp/InterfaceWinFormsApp.csproj" Id="b5374eeb-b502-4792-8b37-0ecea72f701c" />
   <Project Path="LibaryTestProject/LibaryTestProject.csproj" Id="dfcbf56c-062d-44e0-af04-7b985ee99854" />
 </Solution>
