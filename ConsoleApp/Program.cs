@@ -318,6 +318,7 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             emp1.DateOfBirth = new DateOnly(1975, 5, 12);
             emp1.Sex = Gender.Male;
             //emp1.Salary = 120000.00m;
+            Console.WriteLine(Human.PrintNumberOfPeople);
 
             Console.WriteLine($"Mitarbeiter: {emp1.Greet()}");
 
@@ -326,9 +327,11 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
 
             Customer cust1 = new Customer();
             Console.WriteLine(cust1.Greet());
+            Console.WriteLine(Human.NumberOfPeople);
 
             Employee emp3 = new Employee("Jens", "Schulz", new DateOnly(2016, 3, 15), Gender.Male, Department.IT);
             Console.WriteLine($"Mitarbeiter: {emp3.Greet()}");
+            Console.WriteLine(Human.NumberOfPeople);
 
 
             Employee emp4 = new Employee();// "Tobias", "Klein", new DateOnly(1990, 11, 5), Gender.Male, Department.Production);
@@ -343,6 +346,7 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
                 Console.WriteLine($"Fehler: {ex.Message}"); 
             }
             Console.WriteLine($"Mitarbeiter: {emp4.Greet()}");
+            Console.WriteLine(Human.NumberOfPeople);
         }
 
     }

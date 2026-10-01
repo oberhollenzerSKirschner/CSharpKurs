@@ -21,7 +21,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// <summary>
         /// Die eindeutige ID des Mitarbeiters.
         /// </summary>
-        private long _EmployeeId;   // { get; set; }
+        private static long _EmployeeId;   // { get; set; }
         /// <summary>
         /// Das Basisgehalt des Mitarbeiters, das als Ausgangspunkt für die Gehaltsberechnung dient.
         /// </summary>
@@ -32,6 +32,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         #region Konstruktor
         public Employee()
         {
+            _EmployeeId++;
             //Default Konstruktor
         }
 

@@ -23,6 +23,9 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// Das Geschlecht des Mitarbeiters.
         /// </summary>
         private Gender _Sex;   // { get; set; }
+
+        public static long NumberOfPeople;
+
         #endregion
 
         #region Properties
@@ -56,7 +59,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
             get { return _DateOfBirth; }
             set
             {
-                    _DateOfBirth = value;
+                _DateOfBirth = value;
             }
         }
         /// <summary>
@@ -75,17 +78,17 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// </summary>
         public Human()
         {
-            
+            NumberOfPeople++;
         }
         /// <summary>
         /// Initialisiert eine neue Instanz der Human-Klasse mit den angegebenen Parametern.
         /// </summary>
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
-        public Human(string firstName, string lastName)
+        public Human(string firstName, string lastName) : this()
         {
             this.FirstName = firstName;
-            this.LastName = lastName;   
+            this.LastName = lastName;
         }
         /// <summary>
         /// Initialisiert eine neue Instanz der Human-Klasse mit den angegebenen Parametern.
@@ -94,7 +97,7 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         /// <param name="lastName"></param>
         /// <param name="dateOfBirth"></param>
         /// <param name="sex"></param>
-        public Human(string firstName, string lastName, DateOnly dateOfBirth, Gender sex) : this(firstName, lastName)   
+        public Human(string firstName, string lastName, DateOnly dateOfBirth, Gender sex) : this(firstName, lastName)
         {
             this.DateOfBirth = dateOfBirth;
             this.Sex = sex;
@@ -108,6 +111,15 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         virtual public string Greet()
         {
             return $"Hallo, mein Name ist {_FirstName} {_LastName}.";
+        }
+
+        /// <summary>
+        /// Gibt die Anzahl der Menschen zurück, die bisher erstellt wurden.
+        /// </summary>
+        /// <returns></returns>
+        public static string PrintNumberOfPeople()
+        {
+            return $"Es gibt {NumberOfPeople} Menschen.";
         }
     }
 }
