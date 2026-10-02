@@ -19,12 +19,12 @@ namespace InterfaceWinFormsApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TheEmployee = new Employee();
-            TheEmployee.FirstName = firstNameTextBox.Text;
-            TheEmployee.LastName = lastNameTextBox.Text;
-            TheEmployee.Department = Enum.Parse<Department>(departmentsComboBox.SelectedValue.ToString());
+            Employee personal = new Employee();
+            personal.FirstName = this.FirstNameTextBox.Text;
+            personal.LastName = this.LastNameTextBox.Text;
+            personal.Department = Enum.Parse<Department>(this.departmentsComboBox.SelectedValue.ToString());
 
-            outputLabel.Text = $"Der Angestelle wurde angelegt: {TheEmployee.FirstName} {TheEmployee.LastName}, Department: {TheEmployee.Department}";
+            this.outputLabel.Text = $"Der Angestelle wurde angelegt: {personal.FirstName} {personal.LastName}, Department: {personal.Department}";
 
             EventHandlerForm childForm = new EventHandlerForm();
             childForm.Show(this);
