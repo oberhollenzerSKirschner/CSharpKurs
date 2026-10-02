@@ -64,8 +64,16 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         public Department Department
         {
             get { return _Department; }
-            set { _Department = value;
-                CalculateSalary();
+            set {
+                if (_Department != value)
+                {
+                    _Department = value;
+                    CalculateSalary();
+                    if (DepartmentChange != null)
+                    {
+                        DepartmentChangedEventArgs();   //Benachrichtige alle die die Änderung der Abteilung mitbekommen wollen, das die Abteilunngs geändert wurden!
+                    }
+                }
             }
         }
         /// <summary>
@@ -83,6 +91,13 @@ namespace ItSchulung.CsharpKurs.ClassLibrary
         {
             set { _baseSalary = value; }
         }
+        #endregion
+
+        #region EventHändler
+        public delegate void DepartmentChangeEventHandler(object sender, DepartmentChangedEventArgs e);
+
+        public event DepartmentChangeEventHandler DepartmentChange;
+
         #endregion
 
         #region Override

@@ -9,8 +9,15 @@
   </Class>
   <Class Name="ItSchulung.CsharpKurs.ClassLibrary.Employee">
     <Position X="10.75" Y="4.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="ItSchulung.CsharpKurs.ClassLibrary.Employee.DepartmentChangeEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Employee.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAACAAQBAEAAAAIAAACAAAGAAQAAAAACAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAQBAEAAAAIAAACAAAGAAQAAAAACAAAAAAAIA=</HashCode>
       <FileName>Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
