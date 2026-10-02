@@ -185,6 +185,9 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             // Objektorientierte Programmierung (OOP) Demo
             ObjektorientierteProgrammierungDemo();
 
+            // Collections Demo
+            CollectionsDemo();
+
             ///EXIT
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
@@ -347,6 +350,32 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             }
             Console.WriteLine($"Mitarbeiter: {emp4.Greet()}");
             Console.WriteLine(Human.NumberOfPeople);
+        }
+
+        public static void CollectionsDemo()
+        {
+            string[] myArray = new string[3];
+            #region Nicht mehr benutzen ALT .Net 1.0 Element
+            System.Collections.ArrayList myArrayList = new System.Collections.ArrayList(3);
+            myArrayList.Add("Max");
+
+            Console.WriteLine($"ArrayList enthält {myArrayList.Count} Elemente.");
+
+            #endregion
+            System.Collections.Generic.List<string> myList = new System.Collections.Generic.List<string>();
+            myList.Add("Max");
+
+            System.Collections.Generic.
+
+
+            List<Employee> employees = new List<Employee>();
+            employees.Add(new Employee("Max", "Mustermann", new DateOnly(1975, 5, 12), Gender.Male, Department.Management));
+            employees.Add(new Employee("Eva", "Meier", new DateOnly(1985, 8, 20), Gender.Female, Department.Sales));
+            employees.Add(new Employee("Jens", "Schulz", new DateOnly(2016, 3, 15), Gender.Male, Department.IT));
+            foreach (Employee emp in employees)
+            {
+                Console.WriteLine($"Mitarbeiter: {emp.Greet()}");
+            }
         }
 
     }
