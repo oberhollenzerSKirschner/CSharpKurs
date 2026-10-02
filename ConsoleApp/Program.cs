@@ -188,6 +188,9 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             // Collections Demo
             CollectionsDemo();
 
+            //Delegates Demo
+            DelegatesDemo();
+
             ///EXIT
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
@@ -303,13 +306,16 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             p2.X = 34.98;
             p2.Y = 43.89;
 
-            Punkt2D p3 = p1.AddiereVektor(23.21 , 78.89);
+            Punkt2D p3 = p1.AddiereVektor(23.21, 78.89);
             Console.WriteLine($"Punkt3: X={p3.X}, Y={p3.Y}");
 
             Punkt2D p4 = p1.AddiereVektor(p2);
             Console.WriteLine($"Punkt4: X={p4.X}, Y={p4.Y}");
         }
 
+        /// <summary>
+        /// Demonstriert die objektorientierte Programmierung (OOP) in C#. Erstellt mehrere Employee-Objekte, setzt deren Eigenschaften und ruft Methoden auf. Zeigt die Begrüßungstexte der Mitarbeiter und die Anzahl der erstellten Personen an. Außerdem wird eine Ausnahmebehandlung für zu junge Mitarbeiter demonstriert.
+        /// </summary>
         public static void ObjektorientierteProgrammierungDemo()
         {
             Employee emp1;
@@ -346,12 +352,15 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             }
             catch (EmployeeToYoungEception ex)
             {
-                Console.WriteLine($"Fehler: {ex.Message}"); 
+                Console.WriteLine($"Fehler: {ex.Message}");
             }
             Console.WriteLine($"Mitarbeiter: {emp4.Greet()}");
             Console.WriteLine(Human.NumberOfPeople);
         }
 
+        /// <summary>
+        /// Demonstriert die Verwendung von Collections in C#. Erstellt eine ArrayList und eine generische List, fügt Elemente hinzu und gibt die Anzahl der Elemente in der ArrayList aus. Außerdem wird eine Liste von Employee-Objekten erstellt und deren Begrüßungstexte ausgegeben.
+        /// </summary>
         public static void CollectionsDemo()
         {
             string[] myArray = new string[3];
@@ -378,5 +387,27 @@ namespace ItSchulung.CsharpKurs.ConsoleApp
             }
         }
 
+        static void DelegatesDemo()
+        {
+            int[] zahlen = { 32, 128, 512, 256, 16, 8, 1, 4, 2, 1024, 64 };
+
+            Sorter.BubbleSort(zahlen, SortDirection.Ascending);
+            Console.WriteLine("Zahlen sortiert aufsteigend:");
+            foreach (int zahl in zahlen)
+            {
+                Console.Write($"{zahl} ");
+            }
+            Console.WriteLine();
+
+            Sorter.BubbleSort(zahlen, SortDirection.Descending);
+            Console.WriteLine("Zahlen sortiert absteigend:");
+            foreach (int zahl in zahlen)
+            {
+                Console.Write($"{zahl} ");
+            }
+            Console.WriteLine();
+
+
+        }
     }
 }
